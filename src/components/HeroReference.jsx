@@ -32,19 +32,19 @@ export default function HeroReference({ isLoaded = true }) {
   }, [])
 
   return (
-    <section className="relative w-full min-h-[100dvh] md:min-h-screen bg-[#EDE7DF] text-[#18181B] flex flex-col justify-between pt-16 sm:pt-20 pb-5 sm:pb-8 px-4 sm:px-8 md:px-14 overflow-hidden select-none perspective-[1200px]">
+    <section className="relative w-full min-h-[100dvh] md:min-h-screen bg-[#EDE7DF] text-[#18181B] flex flex-col justify-between pt-14 sm:pt-20 pb-4 sm:pb-8 px-4 sm:px-8 md:px-14 overflow-hidden select-none perspective-[1200px]">
       {/* Background Subtle Gradient & Glow */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-[#D45A43]/10 blur-[130px] pointer-events-none" />
 
       {/* Top micro subtitle tag */}
-      <div className={`text-center w-full z-10 pt-2 sm:pt-4 transition-all duration-700 ${animateIn ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}>
+      <div className={`text-center w-full z-10 pt-1 sm:pt-4 transition-all duration-700 ${animateIn ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}>
         <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.25em] text-[#8C827A] font-mono">
           • Focus on High Performance Code
         </span>
       </div>
 
-      {/* Visual Hero Centerpiece (PRAVIN + Photo + KUMAR) */}
-      <div className="relative w-full flex-1 md:flex-none flex items-center justify-center min-h-[250px] max-h-[44vh] sm:max-h-[48vh] md:max-h-none md:h-auto md:static my-auto md:my-0">
+      {/* Visual Hero Centerpiece (PRAVIN + Photo + KUMAR) - Auto-scaled for mobile */}
+      <div className="relative w-full flex-1 md:flex-none flex items-center justify-center min-h-[180px] max-h-[34vh] sm:max-h-[42vh] md:max-h-none md:h-auto md:static my-auto md:my-0">
         
         {/* 3D Diagonal Syne Typography: PRAVIN & KUMAR */}
         <div
@@ -57,14 +57,14 @@ export default function HeroReference({ isLoaded = true }) {
           }}
         >
           {/* Left: PRAVIN */}
-          <div className="flex-1 text-right pr-2 sm:pr-4 overflow-visible">
+          <div className="flex-1 text-right pr-1 sm:pr-4 overflow-visible">
             <div
               className={`transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                 animateIn ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20 sm:-translate-x-44'
               }`}
             >
               <span
-                className="text-[clamp(1.75rem,5.2vw,4.8rem)] font-black uppercase tracking-tight leading-none font-['Syne'] text-[#C8705D] select-none whitespace-nowrap inline-block"
+                className="text-[clamp(1.15rem,4.2vw,4.8rem)] font-black uppercase tracking-tight leading-none font-['Syne'] text-[#C8705D] select-none whitespace-nowrap inline-block"
                 style={{
                   textShadow: `
                     1px 1px 0px #A85444,
@@ -84,17 +84,17 @@ export default function HeroReference({ isLoaded = true }) {
           </div>
 
           {/* Center Gap specifically calculated for head & raised arm */}
-          <div className="w-[110px] sm:w-[140px] md:w-[170px] lg:w-[200px] shrink-0 pointer-events-none" />
+          <div className="w-[80px] sm:w-[110px] md:w-[170px] lg:w-[200px] shrink-0 pointer-events-none" />
 
           {/* Right: KUMAR */}
-          <div className="flex-1 text-left pl-2 sm:pl-4 overflow-visible">
+          <div className="flex-1 text-left pl-1 sm:pl-4 overflow-visible">
             <div
               className={`transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                 animateIn ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20 sm:translate-x-44'
               }`}
             >
               <span
-                className="text-[clamp(1.75rem,5.2vw,4.8rem)] font-black uppercase tracking-tight leading-none font-['Syne'] text-[#18181B] select-none whitespace-nowrap inline-block"
+                className="text-[clamp(1.15rem,4.2vw,4.8rem)] font-black uppercase tracking-tight leading-none font-['Syne'] text-[#18181B] select-none whitespace-nowrap inline-block"
                 style={{
                   textShadow: `
                     1px 1px 0px #32323A,
@@ -116,7 +116,7 @@ export default function HeroReference({ isLoaded = true }) {
 
         {/* Center Cutout Portrait (Pravin in Floral Shirt) */}
         <div
-          className="relative md:absolute md:bottom-0 md:left-1/2 md:-translate-x-1/2 z-20 pointer-events-none flex justify-center items-end h-full max-h-[42vh] sm:max-h-[46vh] md:max-h-[740px] md:h-[74vh] transition-transform duration-200 ease-out"
+          className="relative md:absolute md:bottom-0 md:left-1/2 md:-translate-x-1/2 z-20 pointer-events-none flex justify-center items-end h-full max-h-[30vh] sm:max-h-[38vh] md:max-h-[740px] md:h-[74vh] transition-transform duration-200 ease-out"
           style={{
             transform: isMobile
               ? 'translateZ(20px)'
@@ -132,7 +132,7 @@ export default function HeroReference({ isLoaded = true }) {
             <img
               src="./photos/hero_pravin.png"
               alt="Pravin Kumar"
-              className="h-full w-auto object-contain object-bottom drop-shadow-[0_20px_40px_rgba(0,0,0,0.25)]"
+              className="h-full w-auto object-contain object-bottom drop-shadow-[0_15px_30px_rgba(0,0,0,0.22)]"
             />
           </div>
         </div>
@@ -141,31 +141,31 @@ export default function HeroReference({ isLoaded = true }) {
 
       {/* Bottom Content Row: Positioned cleanly below photo on mobile */}
       <div
-        className={`relative z-30 w-full flex flex-col md:flex-row items-center md:items-end justify-between gap-4 md:gap-8 pt-2 pb-2 md:pb-4 transition-all duration-1000 delay-200 ${
+        className={`relative z-30 w-full flex flex-col md:flex-row items-center md:items-end justify-between gap-3 md:gap-8 pt-1 pb-1 md:pb-4 transition-all duration-1000 delay-200 ${
           animateIn ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}
       >
         {/* Info Column */}
-        <div className="w-full md:max-w-sm text-center md:text-left space-y-2 sm:space-y-3">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-[#18181B] tracking-tight font-['Space_Grotesk']">
+        <div className="w-full md:max-w-sm text-center md:text-left space-y-1.5 sm:space-y-3">
+          <h2 className="text-lg sm:text-2xl md:text-3xl font-black text-[#18181B] tracking-tight font-['Space_Grotesk']">
             Python Developer
           </h2>
-          <p className="text-xs sm:text-sm text-[#5C554F] leading-relaxed max-w-xs sm:max-w-sm mx-auto md:mx-0">
+          <p className="text-[11px] sm:text-sm text-[#5C554F] leading-relaxed max-w-[270px] sm:max-w-sm mx-auto md:mx-0">
             Engineering digital systems that are fast, scalable, and performance-focused.
           </p>
           <div className="pt-1 sm:pt-2 flex justify-center md:justify-start">
             <a
               href="#projects"
-              className="inline-flex items-center gap-2 px-6 py-2.5 sm:py-3 rounded-full bg-[#18181B] text-[#F3F4F6] text-xs font-bold uppercase tracking-wider hover:bg-[#333338] active:scale-95 hover:scale-105 transition-all shadow-lg shadow-black/15 group"
+              className="inline-flex items-center gap-2 px-5 sm:px-6 py-2 sm:py-3 rounded-full bg-[#18181B] text-[#F3F4F6] text-[11px] sm:text-xs font-bold uppercase tracking-wider hover:bg-[#333338] active:scale-95 hover:scale-105 transition-all shadow-md shadow-black/15 group"
             >
               <span>Let's collaborate</span>
-              <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              <ArrowUpRight size={13} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </a>
           </div>
         </div>
 
         {/* Social Column: clean row on mobile, column on desktop */}
-        <div className="flex md:flex-col items-center md:items-start gap-4 md:gap-3 text-xs font-medium text-[#4A4540] pt-1 md:pt-0">
+        <div className="flex md:flex-col items-center md:items-start gap-3.5 sm:gap-4 md:gap-3 text-xs font-medium text-[#4A4540] pt-0.5 md:pt-0">
           <a
             href="https://github.com/pravinkumar-05"
             target="_blank"
