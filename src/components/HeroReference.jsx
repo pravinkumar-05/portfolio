@@ -48,7 +48,7 @@ export default function HeroReference({ isLoaded = true }) {
         
         {/* 3D Diagonal Syne Typography: PRAVIN & KUMAR */}
         <div
-          className="absolute inset-0 md:inset-auto md:top-[42%] md:left-1/2 pointer-events-none z-10 w-full md:max-w-[88vw] flex items-center justify-center transition-transform duration-200 ease-out"
+          className="absolute top-[24%] sm:top-[28%] md:top-[42%] md:left-1/2 inset-x-0 md:inset-x-auto pointer-events-none z-10 w-full md:max-w-[88vw] flex items-center justify-center transition-transform duration-200 ease-out px-2 sm:px-4"
           style={{
             transform: isMobile
               ? `translate(${mouseOffset.x * -0.15}px, ${mouseOffset.y * -0.15}px) rotateZ(-3.5deg)`
@@ -57,14 +57,14 @@ export default function HeroReference({ isLoaded = true }) {
           }}
         >
           {/* Left: PRAVIN */}
-          <div className="flex-1 text-right pr-2 sm:pr-4 overflow-visible">
+          <div className="flex-1 text-right pr-1.5 sm:pr-3 overflow-visible">
             <div
               className={`transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-                animateIn ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20 sm:-translate-x-44'
+                animateIn ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12 sm:-translate-x-44'
               }`}
             >
               <span
-                className="text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-black uppercase tracking-tight leading-none font-['Syne'] text-[#C8705D] select-none whitespace-nowrap inline-block"
+                className="text-base sm:text-xl md:text-5xl lg:text-7xl font-black uppercase tracking-tight leading-none font-['Syne'] text-[#C8705D] select-none whitespace-nowrap inline-block"
                 style={{
                   textShadow: `
                     1px 1px 0px #A85444,
@@ -83,18 +83,18 @@ export default function HeroReference({ isLoaded = true }) {
             </div>
           </div>
 
-          {/* Center Gap specifically calculated for head & raised arm */}
-          <div className="w-[100px] sm:w-[130px] md:w-[170px] lg:w-[200px] shrink-0 pointer-events-none" />
+          {/* Center Gap specifically calculated for head width */}
+          <div className="w-[85px] sm:w-[115px] md:w-[170px] lg:w-[200px] shrink-0 pointer-events-none" />
 
           {/* Right: KUMAR */}
-          <div className="flex-1 text-left pl-2 sm:pl-4 overflow-visible">
+          <div className="flex-1 text-left pl-1.5 sm:pl-3 overflow-visible">
             <div
               className={`transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-                animateIn ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20 sm:translate-x-44'
+                animateIn ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12 sm:translate-x-44'
               }`}
             >
               <span
-                className="text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-black uppercase tracking-tight leading-none font-['Syne'] text-[#18181B] select-none whitespace-nowrap inline-block"
+                className="text-base sm:text-xl md:text-5xl lg:text-7xl font-black uppercase tracking-tight leading-none font-['Syne'] text-[#18181B] select-none whitespace-nowrap inline-block"
                 style={{
                   textShadow: `
                     1px 1px 0px #32323A,
@@ -116,7 +116,7 @@ export default function HeroReference({ isLoaded = true }) {
 
         {/* Center Cutout Portrait (Pravin in Floral Shirt) */}
         <div
-          className="relative md:absolute md:bottom-0 md:left-1/2 md:-translate-x-1/2 z-20 pointer-events-none flex justify-center items-end h-[280px] sm:h-[340px] md:max-h-[740px] md:h-[74vh] transition-transform duration-200 ease-out"
+          className="relative md:absolute md:bottom-0 md:left-1/2 md:-translate-x-1/2 z-20 pointer-events-none flex justify-center items-end h-[260px] sm:h-[320px] md:max-h-[740px] md:h-[74vh] transition-transform duration-200 ease-out"
           style={{
             transform: isMobile
               ? 'translateZ(20px)'
