@@ -38,21 +38,21 @@ export default function HeroReference({ isLoaded = true }) {
 
       {/* 3D Diagonal Syne Typography with Cinematic Opposing Slides */}
       <div
-        className="absolute top-[40%] sm:top-[42%] left-1/2 pointer-events-none z-10 w-full max-w-[88vw] flex items-center justify-center transition-transform duration-200 ease-out"
+        className="absolute top-[36%] sm:top-[40%] md:top-[42%] left-1/2 pointer-events-none z-10 w-full max-w-[94vw] sm:max-w-[88vw] flex items-center justify-center transition-transform duration-200 ease-out"
         style={{
           transform: `translate(calc(-50% + ${mouseOffset.x * -0.2}px), calc(-50% + ${mouseOffset.y * -0.2}px)) rotateX(${mouseOffset.y * -0.3}deg) rotateY(${mouseOffset.x * 0.3}deg) rotateZ(-5deg)`,
           transformStyle: 'preserve-3d',
         }}
       >
         {/* Left: PRAVIN slides in from LEFT to RIGHT */}
-        <div className="flex-1 text-right pr-2 sm:pr-4 overflow-visible">
+        <div className="flex-1 text-right pr-1 sm:pr-4 overflow-visible">
           <div
             className={`transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${
               animateIn ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-28 sm:-translate-x-44'
             }`}
           >
             <span
-              className="text-[clamp(1.5rem,5.2vw,4.8rem)] font-black uppercase tracking-tight leading-none font-['Syne'] text-[#C8705D] select-none whitespace-nowrap inline-block"
+              className="text-[clamp(1.25rem,4.8vw,4.8rem)] font-black uppercase tracking-tight leading-none font-['Syne'] text-[#C8705D] select-none whitespace-nowrap inline-block"
               style={{
                 textShadow: `
                   1px 1px 0px #A85444,
@@ -72,17 +72,17 @@ export default function HeroReference({ isLoaded = true }) {
         </div>
 
         {/* Center Gap specifically calculated for head & raised arm */}
-        <div className="w-[100px] sm:w-[140px] md:w-[170px] lg:w-[200px] shrink-0 pointer-events-none" />
+        <div className="w-[75px] sm:w-[130px] md:w-[170px] lg:w-[200px] shrink-0 pointer-events-none" />
 
         {/* Right: KUMAR slides in from RIGHT to LEFT */}
-        <div className="flex-1 text-left pl-2 sm:pl-4 overflow-visible">
+        <div className="flex-1 text-left pl-1 sm:pl-4 overflow-visible">
           <div
             className={`transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${
               animateIn ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-28 sm:translate-x-44'
             }`}
           >
             <span
-              className="text-[clamp(1.5rem,5.2vw,4.8rem)] font-black uppercase tracking-tight leading-none font-['Syne'] text-[#18181B] select-none whitespace-nowrap inline-block"
+              className="text-[clamp(1.25rem,4.8vw,4.8rem)] font-black uppercase tracking-tight leading-none font-['Syne'] text-[#18181B] select-none whitespace-nowrap inline-block"
               style={{
                 textShadow: `
                   1px 1px 0px #32323A,
@@ -104,7 +104,7 @@ export default function HeroReference({ isLoaded = true }) {
 
       {/* Center Cutout Portrait (Pravin in Floral Shirt) SLIDES IN FROM DOWN TO UP */}
       <div
-        className="absolute bottom-0 left-1/2 -translate-x-1/2 z-20 pointer-events-none flex justify-center items-end h-[62vh] sm:h-[68vh] md:h-[74vh] max-h-[740px] transition-transform duration-200 ease-out"
+        className="absolute bottom-0 left-1/2 -translate-x-1/2 z-20 pointer-events-none flex justify-center items-end h-[50vh] sm:h-[65vh] md:h-[74vh] max-h-[740px] transition-transform duration-200 ease-out"
         style={{
           transform: `translate(calc(-50% + ${mouseOffset.x * 0.25}px), ${mouseOffset.y * 0.12}px) rotateY(${mouseOffset.x * -0.2}deg) translateZ(30px)`,
           transformStyle: 'preserve-3d',

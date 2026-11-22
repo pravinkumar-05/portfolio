@@ -53,15 +53,15 @@ export default function ArchitectureStack() {
   const [activeLayer, setActiveLayer] = useState(architectureLayers[0])
 
   return (
-    <div className="w-full max-w-5xl mx-auto py-20 px-6">
-      <div className="text-center mb-14">
+    <div className="w-full max-w-5xl mx-auto py-14 sm:py-20 px-4 sm:px-6">
+      <div className="text-center mb-10 sm:mb-14">
         <span className="text-xs uppercase tracking-[0.25em] text-[#C8705D] font-semibold">
           High-Scale Architecture
         </span>
-        <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight mt-2 font-['Space_Grotesk']">
+        <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-white tracking-tight mt-2 font-['Space_Grotesk']">
           ENGINEERED FOR SCALE
         </h2>
-        <p className="text-gray-300 max-w-lg mx-auto text-sm mt-3">
+        <p className="text-gray-300 max-w-lg mx-auto text-xs sm:text-sm mt-3">
           Interactive systems stack inspired by modern high-throughput digital infrastructure.
         </p>
       </div>

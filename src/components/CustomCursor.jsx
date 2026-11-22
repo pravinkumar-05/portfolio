@@ -123,16 +123,16 @@ export default function CustomCursor() {
 
   return (
     <>
-      {/* Central precise dot */}
+      {/* Central precise dot - hidden on touch/mobile */}
       <div
         ref={dotRef}
-        className="fixed top-0 left-0 w-2 h-2 rounded-full bg-[#18181B] pointer-events-none z-[9999] opacity-0 transition-opacity duration-200"
+        className="hidden sm:block fixed top-0 left-0 w-2 h-2 rounded-full bg-[#18181B] pointer-events-none z-[9999] opacity-0 transition-opacity duration-200"
         style={{ willChange: 'transform' }}
       />
-      {/* Outer fluid elastic ring */}
+      {/* Outer fluid elastic ring - hidden on touch/mobile */}
       <div
         ref={ringRef}
-        className="fixed top-0 left-0 w-8 h-8 rounded-full border-2 border-[#C8705D]/80 pointer-events-none z-[9998] opacity-0 transition-colors duration-200 flex items-center justify-center backdrop-blur-[0.5px]"
+        className="hidden sm:flex fixed top-0 left-0 w-8 h-8 rounded-full border-2 border-[#C8705D]/80 pointer-events-none z-[9998] opacity-0 transition-colors duration-200 items-center justify-center backdrop-blur-[0.5px]"
         style={{ willChange: 'transform' }}
       >
         <span

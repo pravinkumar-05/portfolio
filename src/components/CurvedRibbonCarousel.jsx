@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { ArrowUpRight, Github, ChevronLeft, ChevronRight } from 'lucide-react'
 
 export const pravinRealProjects = [
@@ -30,8 +30,16 @@ export const pravinRealProjects = [
 
 export default function CurvedRibbonCarousel() {
   const [activeIdx, setActiveIdx] = useState(1)
+  const [isMobile, setIsMobile] = useState(false)
   const isDragging = useRef(false)
   const startX = useRef(0)
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 640)
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   const handleStart = (clientX) => {
     isDragging.current = true
@@ -65,7 +73,7 @@ export default function CurvedRibbonCarousel() {
 
       {/* 3D Curved Ribbon Stage (Video 2 at 00:13 - 00:16) */}
       <div
-        className="relative w-full max-w-6xl mx-auto h-[460px] flex items-center justify-center perspective-[1400px] cursor-grab active:cursor-grabbing px-4"
+        className="relative w-full max-w-6xl mx-auto h-[380px] sm:h-[460px] flex items-center justify-center perspective-[1400px] cursor-grab active:cursor-grabbing px-2 sm:px-4"
         onMouseDown={(e) => handleStart(e.clientX)}
         onMouseUp={(e) => handleEnd(e.clientX)}
         onTouchStart={(e) => e.touches?.[0] && handleStart(e.touches[0].clientX)}
@@ -73,17 +81,17 @@ export default function CurvedRibbonCarousel() {
       >
         {pravinRealProjects.map((item, idx) => {
           const diff = idx - activeIdx
-          let rotateY = diff * -28
-          let translateX = diff * 340
-          let translateZ = Math.abs(diff) * -120
-          let scale = diff === 0 ? 1 : 0.82
-          let opacity = diff === 0 ? 1 : 0.65
+          let rotateY = diff * (isMobile ? -20 : -28)
+          let translateX = diff * (isMobile ? 220 : 340)
+          let translateZ = Math.abs(diff) * (isMobile ? -80 : -120)
+          let scale = diff === 0 ? 1 : (isMobile ? 0.86 : 0.82)
+          let opacity = diff === 0 ? 1 : (isMobile ? 0.5 : 0.65)
 
           return (
             <div
               key={item.id}
               onClick={() => setActiveIdx(idx)}
-              className="absolute w-full max-w-[540px] transition-all duration-600 ease-[cubic-bezier(0.2,0.8,0.2,1)] rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-[#2A2A2A] cursor-pointer group"
+              className="absolute w-[88vw] sm:w-full sm:max-w-[540px] transition-all duration-600 ease-[cubic-bezier(0.2,0.8,0.2,1)] rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-[#2A2A2A] cursor-pointer group"
               style={{
                 transform: `translateX(${translateX}px) translateZ(${translateZ}px) rotateY(${rotateY}deg) scale(${scale})`,
                 opacity: opacity,
@@ -91,20 +99,20 @@ export default function CurvedRibbonCarousel() {
               }}
             >
               {/* Browser mockup header */}
-              <div className="h-9 bg-[#1C1C1C] px-4 flex items-center justify-between border-b border-white/5">
+              <div className="h-8 sm:h-9 bg-[#1C1C1C] px-3 sm:px-4 flex items-center justify-between border-b border-white/5">
                 <div className="flex gap-1.5">
-                  <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
-                  <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
-                  <span className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
+                  <span className="w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-red-500/80" />
+                  <span className="w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-yellow-500/80" />
+                  <span className="w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-green-500/80" />
                 </div>
-                <span className="text-[10px] font-mono text-gray-400 truncate max-w-[240px]">
+                <span className="text-[9px] sm:text-[10px] font-mono text-gray-400 truncate max-w-[200px] sm:max-w-[240px]">
                   github.com/pravinkumar-05/{item.title.toLowerCase().replace(/ /g, '-')}
                 </span>
                 <div className="w-2 h-2" />
               </div>
 
               {/* Real Screenshot from Repo */}
-              <div className="w-full h-68 sm:h-72 overflow-hidden relative bg-black/60">
+              <div className="w-full h-52 sm:h-72 overflow-hidden relative bg-black/60">
                 <img
                   src={item.image}
                   alt={item.title}

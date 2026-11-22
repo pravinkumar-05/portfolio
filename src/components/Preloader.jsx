@@ -104,7 +104,7 @@ export default function Preloader({ onComplete }) {
 
       {/* Stage 1: Dropping letters one by one from top to center in pure white (PRAVINKUMAR'S) */}
       <div
-        className={`w-full max-w-[92vw] mx-auto flex items-center justify-center px-4 overflow-visible transition-all duration-500 ease-out ${showPortfolio ? 'opacity-0 -translate-y-6 scale-95 pointer-events-none absolute' : 'opacity-100 translate-y-0 scale-100 relative'
+        className={`w-full max-w-[96vw] sm:max-w-[92vw] mx-auto flex items-center justify-center px-1 sm:px-4 overflow-visible transition-all duration-500 ease-out ${showPortfolio ? 'opacity-0 -translate-y-6 scale-95 pointer-events-none absolute' : 'opacity-100 translate-y-0 scale-100 relative'
           }`}
       >
         {LETTERS.map((item, idx) => {
@@ -112,7 +112,7 @@ export default function Preloader({ onComplete }) {
           return (
             <span
               key={item.id}
-              className={`inline-block font-black uppercase font-['Syne'] text-[clamp(1.5rem,4.8vw,4.2rem)] leading-none text-white transition-all duration-1000 ${item.isSpaceBefore ? 'ml-2 sm:ml-4 md:ml-6' : ''
+              className={`inline-block font-black uppercase font-['Syne'] text-[clamp(1.1rem,4.4vw,4.2rem)] leading-none text-white transition-all duration-1000 ${item.isSpaceBefore ? 'ml-1 sm:ml-3 md:ml-6' : ''
                 }`}
               style={{
                 transform: isDropped
@@ -157,7 +157,7 @@ export default function Preloader({ onComplete }) {
               return (
                 <span
                   key={idx}
-                  className="inline-block font-black uppercase font-['Syne'] text-[clamp(2.2rem,6.8vw,4.8rem)] leading-none text-white tracking-tight transition-all duration-500 ease-out"
+                  className="inline-block font-black uppercase font-['Syne'] text-[clamp(1.7rem,6.2vw,4.8rem)] leading-none text-white tracking-tight transition-all duration-500 ease-out"
                   style={{
                     opacity: isShown ? 1 : 0,
                     transform: isShown ? 'scale(1)' : 'scale(0.85)',
@@ -186,7 +186,7 @@ export default function Preloader({ onComplete }) {
               }`}
           >
             <span
-              className="text-xs sm:text-sm md:text-base font-mono tracking-[0.22em] uppercase font-bold text-[#C23628] flex items-center gap-2"
+              className="text-[11px] sm:text-sm md:text-base font-mono tracking-[0.16em] sm:tracking-[0.22em] uppercase font-bold text-[#C23628] flex items-center gap-1.5 sm:gap-2"
               style={{
                 textShadow: '0 0 10px rgba(194, 54, 40, 0.45)',
               }}

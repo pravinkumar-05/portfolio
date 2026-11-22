@@ -35,12 +35,12 @@ function CounterItem({ stat }) {
   }, [stat.value])
 
   return (
-    <div className="p-6 rounded-2xl bg-[#2A2A2A] border border-white/10 backdrop-blur-md text-center hover:border-[#22D3EE]/40 transition-all group shadow-lg">
-      <div className="text-4xl md:text-6xl font-black text-white font-['Space_Grotesk'] tracking-tight group-hover:text-[#22D3EE] transition-colors">
+    <div className="p-3.5 sm:p-6 rounded-xl sm:rounded-2xl bg-[#2A2A2A] border border-white/10 backdrop-blur-md text-center hover:border-[#22D3EE]/40 transition-all group shadow-lg">
+      <div className="text-2xl sm:text-4xl md:text-6xl font-black text-white font-['Space_Grotesk'] tracking-tight group-hover:text-[#22D3EE] transition-colors">
         {count}
-        <span className="text-[#C8705D] text-3xl md:text-5xl">{stat.suffix}</span>
+        <span className="text-[#C8705D] text-xl sm:text-3xl md:text-5xl">{stat.suffix}</span>
       </div>
-      <p className="text-xs uppercase tracking-[0.2em] text-gray-400 mt-2 font-mono">
+      <p className="text-[9px] sm:text-xs uppercase tracking-wider sm:tracking-[0.2em] text-gray-400 mt-1.5 sm:mt-2 font-mono">
         {stat.label}
       </p>
     </div>
@@ -49,8 +49,8 @@ function CounterItem({ stat }) {
 
 export default function StatCounters() {
   return (
-    <div className="w-full max-w-5xl mx-auto py-16 px-6">
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+    <div className="w-full max-w-5xl mx-auto py-10 sm:py-16 px-4 sm:px-6">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
         {statsData.map((stat, i) => (
           <CounterItem key={i} stat={stat} />
         ))}

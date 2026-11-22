@@ -107,7 +107,7 @@ export default function AboutZeroGravity() {
             {/* Left: ABOUT — Starts tucked behind back (shifted right to center), then slides out to LEFT */}
             <div className="flex-1 text-right pr-2 sm:pr-4 md:pr-6 overflow-visible">
               <span
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight leading-none font-['Syne'] text-white select-none whitespace-nowrap inline-block transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight leading-none font-['Syne'] text-white select-none whitespace-nowrap inline-block transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)]"
                 style={{
                   textShadow: `
                     1px 1px 0px #3a3a3a,
@@ -128,12 +128,12 @@ export default function AboutZeroGravity() {
             </div>
 
             {/* Center Gap specifically calculated for suit portrait */}
-            <div className="w-[140px] sm:w-[190px] md:w-[240px] lg:w-[280px] shrink-0 pointer-events-none" />
+            <div className="w-[80px] sm:w-[150px] md:w-[220px] lg:w-[280px] shrink-0 pointer-events-none" />
 
             {/* Right: ME — Starts tucked behind back (shifted left to center), then slides out to RIGHT */}
             <div className="flex-1 text-left pl-2 sm:pl-4 md:pl-6 overflow-visible">
               <span
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight leading-none font-['Syne'] text-white select-none whitespace-nowrap inline-block transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight leading-none font-['Syne'] text-white select-none whitespace-nowrap inline-block transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)]"
                 style={{
                   textShadow: `
                     1px 1px 0px #3a3a3a,
@@ -160,7 +160,7 @@ export default function AboutZeroGravity() {
             onMouseEnter={() => setPhotoHover(true)}
             onMouseLeave={() => setPhotoHover(false)}
             onMouseMove={handlePhotoMouseMove}
-            className="absolute bottom-0 left-1/2 -translate-x-1/2 z-20 pointer-events-auto cursor-crosshair group flex justify-center items-end h-[330px] sm:h-[390px] md:h-[450px] lg:h-[490px] transition-transform duration-200 ease-out"
+            className="absolute bottom-0 left-1/2 -translate-x-1/2 z-20 pointer-events-auto cursor-crosshair group flex justify-center items-end h-[280px] sm:h-[380px] md:h-[450px] lg:h-[490px] transition-transform duration-200 ease-out"
             style={{
               transform: `translate(calc(-50% + ${mouseOffset.x * 0.3}px), ${mouseOffset.y * 0.15}px) rotateY(${mouseOffset.x * -0.25}deg) rotateX(${mouseOffset.y * 0.15}deg) translateZ(40px)`,
               transformStyle: 'preserve-3d',

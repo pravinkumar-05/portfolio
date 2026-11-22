@@ -57,11 +57,11 @@ export default function App() {
       <AboutZeroGravity />
 
       {/* 3. Kinetic Typography Manifesto */}
-      <section id="manifesto" className="py-24 px-6 md:px-16 max-w-6xl mx-auto border-t border-b border-white/10 bg-[#222222]">
-        <span className="text-xs font-mono uppercase tracking-[0.3em] text-[#C8705D] block mb-6">
+      <section id="manifesto" className="py-14 sm:py-24 px-4 sm:px-6 md:px-16 max-w-6xl mx-auto border-t border-b border-white/10 bg-[#222222]">
+        <span className="text-[10px] sm:text-xs font-mono uppercase tracking-[0.25em] sm:tracking-[0.3em] text-[#C8705D] block mb-4 sm:mb-6">
           // Design Philosophy
         </span>
-        <blockquote className="text-3xl sm:text-4xl md:text-6xl font-black text-white uppercase tracking-tight leading-tight font-['Space_Grotesk']">
+        <blockquote className="text-2xl sm:text-4xl md:text-6xl font-black text-white uppercase tracking-tight leading-tight font-['Space_Grotesk']">
           "I DON'T JUST BUILD APPLICATIONS.{' '}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#22D3EE] to-[#7C5CFF]">
             I ENGINEER DIGITAL INFRASTRUCTURE.

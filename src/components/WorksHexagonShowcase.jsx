@@ -1,10 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { ArrowUpRight, Github, ChevronLeft, ChevronRight } from 'lucide-react'
 import { pravinRealProjects } from './CurvedRibbonCarousel'
 
 export default function WorksHexagonShowcase() {
   const [activeIndex, setActiveIndex] = useState(0)
+  const [isMobile, setIsMobile] = useState(false)
   const currentProject = pravinRealProjects[activeIndex]
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 640)
+    check()
+    window.addEventListener('resize', check)
+    return () => window.removeEventListener('resize', check)
+  }, [])
 
   const nextProject = () => {
     setActiveIndex((prev) => (prev + 1) % pravinRealProjects.length)
@@ -72,7 +80,7 @@ export default function WorksHexagonShowcase() {
 
           {/* 3D Revolving Card Stage */}
           <div
-            className="w-full max-w-[500px] h-[360px] relative perspective-[1200px] flex items-center justify-center cursor-pointer group"
+            className="w-full max-w-[92vw] sm:max-w-[500px] h-[300px] sm:h-[360px] relative perspective-[1200px] flex items-center justify-center cursor-pointer group"
             onClick={nextProject}
           >
             {pravinRealProjects.map((proj, idx) => {
@@ -84,17 +92,17 @@ export default function WorksHexagonShowcase() {
 
               if (offset === 0) {
                 // Active Card: Centered & Flat in Front
-                transformStyle = 'rotateX(0deg) translateZ(140px) scale(1)'
+                transformStyle = `rotateX(0deg) translateZ(${isMobile ? 80 : 140}px) scale(1)`
                 zIndex = 30
                 opacity = 1
               } else if (offset === 1) {
                 // Top Card: Angled up backwards in 3D perspective
-                transformStyle = 'rotateX(42deg) translateY(-140px) translateZ(-60px) scale(0.85)'
+                transformStyle = `rotateX(38deg) translateY(${isMobile ? -95 : -140}px) translateZ(-60px) scale(${isMobile ? 0.88 : 0.85})`
                 zIndex = 15
                 opacity = 0.75
               } else if (offset === 2) {
                 // Bottom Card: Angled down backwards in 3D perspective
-                transformStyle = 'rotateX(-42deg) translateY(140px) translateZ(-60px) scale(0.85)'
+                transformStyle = `rotateX(-38deg) translateY(${isMobile ? 95 : 140}px) translateZ(-60px) scale(${isMobile ? 0.88 : 0.85})`
                 zIndex = 15
                 opacity = 0.75
               }
@@ -102,7 +110,7 @@ export default function WorksHexagonShowcase() {
               return (
                 <div
                   key={proj.id}
-                  className="absolute w-full max-w-[460px] transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] rounded-2xl overflow-hidden shadow-2xl border border-black/10 bg-[#161B2E]"
+                  className="absolute w-[88vw] sm:w-full sm:max-w-[460px] transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] rounded-2xl overflow-hidden shadow-2xl border border-black/10 bg-[#161B2E]"
                   style={{
                     transform: transformStyle,
                     zIndex: zIndex,
