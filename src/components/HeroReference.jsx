@@ -114,7 +114,7 @@ export default function HeroReference({ isLoaded = true }) {
           </div>
         </div>
 
-        {/* Center Cutout Portrait (Pravin in Floral Shirt) */}
+        {/* Center Cutout Portrait (Pravin in Blazer Sticker) */}
         <div
           className="relative md:absolute md:bottom-0 md:left-1/2 md:-translate-x-1/2 z-20 pointer-events-none flex justify-center items-end h-[260px] sm:h-[320px] md:max-h-[740px] md:h-[74vh] transition-transform duration-200 ease-out"
           style={{
@@ -130,8 +130,8 @@ export default function HeroReference({ isLoaded = true }) {
             }`}
           >
             <img
-              src="./photos/hero_pravin.png"
-              alt="Pravin Kumar"
+              src="./photos/hero_blazer.png"
+              alt="Pravin Kumar - Blazer"
               className="h-full w-auto object-contain object-bottom drop-shadow-[0_15px_30px_rgba(0,0,0,0.22)]"
             />
           </div>
