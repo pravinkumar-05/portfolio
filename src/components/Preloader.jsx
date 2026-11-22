@@ -19,7 +19,6 @@ const LETTERS = [
 const PORTFOLIO_LETTERS = ['P', 'O', 'R', 'T', 'F', 'O', 'L', 'I', 'O']
 
 export default function Preloader({ onComplete }) {
-  const [photoInCenter, setPhotoInCenter] = useState(false)
   const [droppedIndex, setDroppedIndex] = useState(-1)
   const [allDropped, setAllDropped] = useState(false)
   const [showPortfolio, setShowPortfolio] = useState(false)
@@ -29,15 +28,8 @@ export default function Preloader({ onComplete }) {
   useEffect(() => {
     const timeouts = []
 
-    // 1. Photo slides up from bottom to center first
-    timeouts.push(
-      setTimeout(() => {
-        setPhotoInCenter(true)
-      }, 100)
-    )
-
-    // 2. AFTER photo settles in center (~950ms), drop PRAVINKUMAR'S letters one by one
-    const startLettersDropTime = 1050
+    // 1. Drop PRAVINKUMAR'S letters one by one from top to center
+    const startLettersDropTime = 250
     LETTERS.forEach((_, idx) => {
       timeouts.push(
         setTimeout(() => {
@@ -46,7 +38,7 @@ export default function Preloader({ onComplete }) {
       )
     })
 
-    // 3. All letters finished dropping into PRAVINKUMAR'S
+    // 2. All letters finished dropping into PRAVINKUMAR'S
     const finishDropTime = startLettersDropTime + LETTERS.length * 160 + 350
     timeouts.push(
       setTimeout(() => {
@@ -54,7 +46,7 @@ export default function Preloader({ onComplete }) {
       }, finishDropTime)
     )
 
-    // 4. Switch to PORTFOLIO (typing one by one in place, with slower deliberate pacing)
+    // 3. Switch to PORTFOLIO (typing one by one in place, with slower deliberate pacing)
     const switchTime = finishDropTime + 1100
     timeouts.push(
       setTimeout(() => {
@@ -71,7 +63,7 @@ export default function Preloader({ onComplete }) {
       )
     })
 
-    // 5. Hold the assembled PORTFOLIO + Python Developer on screen
+    // 4. Hold the assembled PORTFOLIO + Python Developer on screen
     const totalPortfolioTime = switchTime + 200 + PORTFOLIO_LETTERS.length * 165 + 1600
     timeouts.push(
       setTimeout(() => {
@@ -79,7 +71,7 @@ export default function Preloader({ onComplete }) {
       }, totalPortfolioTime)
     )
 
-    // 6. Complete loading and transition into website
+    // 5. Complete loading and transition into website
     timeouts.push(
       setTimeout(() => {
         onComplete && onComplete()
@@ -110,23 +102,6 @@ export default function Preloader({ onComplete }) {
         SKIP
       </button>
 
-      {/* Photo Cutout: Slides from bottom to center BEFORE letters drop */}
-      <div
-        className={`absolute bottom-0 left-1/2 -translate-x-1/2 z-20 flex justify-center items-end h-[320px] sm:h-[400px] md:h-[480px] pointer-events-none transition-all duration-900 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-          photoInCenter
-            ? showPortfolio
-              ? 'opacity-0 translate-y-10 scale-95'
-              : 'opacity-100 translate-y-0 scale-100'
-            : 'opacity-0 translate-y-[120vh] scale-90'
-        }`}
-      >
-        <img
-          src="./photos/pravin_floral_clean.png"
-          alt="Pravin Kumar"
-          className="h-full w-auto object-contain object-bottom drop-shadow-[0_25px_50px_rgba(0,0,0,0.85)] filter contrast-105"
-        />
-      </div>
-
       {/* Stage 1: Dropping letters one by one from top to center in pure white (PRAVINKUMAR'S) */}
       <div
         className={`w-full max-w-[92vw] mx-auto flex items-center justify-center px-4 overflow-visible transition-all duration-500 ease-out ${showPortfolio ? 'opacity-0 -translate-y-6 scale-95 pointer-events-none absolute' : 'opacity-100 translate-y-0 scale-100 relative'
@@ -137,9 +112,8 @@ export default function Preloader({ onComplete }) {
           return (
             <span
               key={item.id}
-              className={`inline-block font-black uppercase font-['Syne'] text-[clamp(1.5rem,4.8vw,4.2rem)] leading-none text-white transition-all duration-1000 ${
-                item.isSpaceBefore ? 'ml-2 sm:ml-4 md:ml-6' : ''
-              }`}
+              className={`inline-block font-black uppercase font-['Syne'] text-[clamp(1.5rem,4.8vw,4.2rem)] leading-none text-white transition-all duration-1000 ${item.isSpaceBefore ? 'ml-2 sm:ml-4 md:ml-6' : ''
+                }`}
               style={{
                 transform: isDropped
                   ? 'translateY(0px) scale(1) rotate(0deg)'
