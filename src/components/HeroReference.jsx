@@ -57,7 +57,7 @@ export default function HeroReference({ isLoaded = true }) {
           }}
         >
           {/* Left: PRAVIN */}
-          <div className="flex-1 text-right pr-1.5 sm:pr-3 overflow-visible">
+          <div className="flex-1 text-right pr-4 sm:pr-6 md:pr-4 overflow-visible">
             <div
               className={`transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                 animateIn ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12 sm:-translate-x-44'
