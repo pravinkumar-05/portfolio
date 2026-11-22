@@ -84,7 +84,7 @@ export default function HeroReference({ isLoaded = true }) {
           </div>
 
           {/* Center Gap specifically calculated for head & raised arm */}
-          <div className="w-[90px] sm:w-[125px] md:w-[160px] lg:w-[190px] shrink-0 pointer-events-none" />
+          <div className="w-[110px] sm:w-[140px] md:w-[170px] lg:w-[200px] shrink-0 pointer-events-none" />
 
           {/* Right: KUMAR */}
           <div className="flex-1 text-left pl-2 sm:pl-4 overflow-visible">
@@ -130,7 +130,7 @@ export default function HeroReference({ isLoaded = true }) {
             }`}
           >
             <img
-              src="./photos/pravin_floral_tight.png"
+              src="./photos/hero_pravin.png"
               alt="Pravin Kumar"
               className="h-full w-auto object-contain object-bottom drop-shadow-[0_20px_40px_rgba(0,0,0,0.25)]"
             />

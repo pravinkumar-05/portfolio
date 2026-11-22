@@ -154,19 +154,39 @@ export default function AboutZeroGravity() {
             </div>
           </div>
 
-          {/* Foreground 3D Cutout (Pravin in Suit & Sunglasses) - Full Natural Color */}
+          {/* Foreground 3D Cutout (Pravin in Suit & Sunglasses) - Monochrome with Seamless Cursor Color Reveal */}
           <div
             ref={photoRef}
-            className="absolute bottom-0 left-1/2 -translate-x-1/2 z-20 pointer-events-auto flex justify-center items-end h-[280px] sm:h-[380px] md:h-[450px] lg:h-[490px] transition-transform duration-200 ease-out"
+            onMouseEnter={() => setPhotoHover(true)}
+            onMouseLeave={() => setPhotoHover(false)}
+            onMouseMove={handlePhotoMouseMove}
+            className="absolute bottom-0 left-1/2 -translate-x-1/2 z-20 pointer-events-auto cursor-crosshair group flex justify-center items-end h-[280px] sm:h-[380px] md:h-[450px] lg:h-[490px] transition-transform duration-200 ease-out"
             style={{
               transform: `translate(calc(-50% + ${mouseOffset.x * 0.3}px), ${mouseOffset.y * 0.15}px) rotateY(${mouseOffset.x * -0.25}deg) rotateX(${mouseOffset.y * 0.15}deg) translateZ(40px)`,
               transformStyle: 'preserve-3d',
             }}
           >
+            {/* 1. Base Monochrome (Grayscale) Image - Clean 3D sticker cutout with zero bottom line */}
             <img
-              src="./photos/pravin_suit_tight.png"
-              alt="Pravin Kumar - Suit"
-              className="h-full w-auto object-contain object-bottom drop-shadow-[0_25px_50px_rgba(0,0,0,0.85)] filter contrast-105 hover:drop-shadow-[0_25px_50px_rgba(34,211,238,0.35)] transition-all duration-300"
+              src="./photos/pravin_suit_v7.png"
+              alt="Pravin Kumar - Suit (Monochrome)"
+              className="h-full w-auto object-contain object-bottom drop-shadow-[0_20px_45px_rgba(0,0,0,0.85)] filter grayscale contrast-110 brightness-95"
+            />
+
+            {/* 2. Color Reveal Layer: Masked strictly around cursor position */}
+            <img
+              src="./photos/pravin_suit_v7.png"
+              alt="Pravin Kumar - Suit (Color Reveal)"
+              className="absolute inset-0 w-full h-full object-contain object-bottom filter contrast-105 pointer-events-none transition-opacity duration-200"
+              style={{
+                opacity: photoHover ? 1 : 0,
+                WebkitMaskImage: photoHover
+                  ? `radial-gradient(circle 120px at ${lensPos.x}px ${lensPos.y}px, black 40%, rgba(0,0,0,0.4) 75%, transparent 100%)`
+                  : 'none',
+                maskImage: photoHover
+                  ? `radial-gradient(circle 120px at ${lensPos.x}px ${lensPos.y}px, black 40%, rgba(0,0,0,0.4) 75%, transparent 100%)`
+                  : 'none',
+              }}
             />
           </div>
 
