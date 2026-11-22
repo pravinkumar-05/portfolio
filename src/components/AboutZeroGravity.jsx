@@ -168,15 +168,15 @@ export default function AboutZeroGravity() {
           >
             {/* 1. Base Monochrome (Grayscale) Image - Clean 3D sticker cutout with zero bottom line */}
             <img
-              src="./photos/pravin_suit_v7.png"
-              alt="Pravin Kumar - Suit (Monochrome)"
+              src="./photos/pravin_suit_v8.png"
+              alt="Pravin Kumar - Blazer (Monochrome)"
               className="h-full w-auto object-contain object-bottom drop-shadow-[0_20px_45px_rgba(0,0,0,0.85)] filter grayscale contrast-110 brightness-95"
             />
 
             {/* 2. Color Reveal Layer: Masked strictly around cursor position */}
             <img
-              src="./photos/pravin_suit_v7.png"
-              alt="Pravin Kumar - Suit (Color Reveal)"
+              src="./photos/pravin_suit_v8.png"
+              alt="Pravin Kumar - Blazer (Color Reveal)"
               className="absolute inset-0 w-full h-full object-contain object-bottom filter contrast-105 pointer-events-none transition-opacity duration-200"
               style={{
                 opacity: photoHover ? 1 : 0,
