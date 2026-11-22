@@ -44,7 +44,7 @@ export default function HeroReference({ isLoaded = true }) {
       </div>
 
       {/* Visual Hero Centerpiece (PRAVIN + Photo + KUMAR) */}
-      <div className="relative w-full flex-1 md:flex-none flex items-center justify-center min-h-[290px] max-h-[50vh] md:max-h-none md:h-auto md:static my-auto md:my-0">
+      <div className="relative w-full flex-1 md:flex-none flex items-center justify-center min-h-[250px] max-h-[44vh] sm:max-h-[48vh] md:max-h-none md:h-auto md:static my-auto md:my-0">
         
         {/* 3D Diagonal Syne Typography: PRAVIN & KUMAR */}
         <div
@@ -116,7 +116,7 @@ export default function HeroReference({ isLoaded = true }) {
 
         {/* Center Cutout Portrait (Pravin in Floral Shirt) */}
         <div
-          className="relative md:absolute md:bottom-0 md:left-1/2 md:-translate-x-1/2 z-20 pointer-events-none flex justify-center items-end h-full max-h-[48vh] md:max-h-[740px] md:h-[74vh] transition-transform duration-200 ease-out"
+          className="relative md:absolute md:bottom-0 md:left-1/2 md:-translate-x-1/2 z-20 pointer-events-none flex justify-center items-end h-full max-h-[42vh] sm:max-h-[46vh] md:max-h-[740px] md:h-[74vh] transition-transform duration-200 ease-out"
           style={{
             transform: isMobile
               ? 'translateZ(20px)'
