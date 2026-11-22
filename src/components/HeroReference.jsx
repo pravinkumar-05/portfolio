@@ -44,7 +44,7 @@ export default function HeroReference({ isLoaded = true }) {
       </div>
 
       {/* Visual Hero Centerpiece (PRAVIN + Photo + KUMAR) - Auto-scaled for mobile */}
-      <div className="relative w-full flex-1 md:flex-none flex items-center justify-center min-h-[180px] max-h-[34vh] sm:max-h-[42vh] md:max-h-none md:h-auto md:static my-auto md:my-0">
+      <div className="relative w-full flex items-center justify-center h-[280px] sm:h-[340px] md:h-auto md:static my-auto md:my-0">
         
         {/* 3D Diagonal Syne Typography: PRAVIN & KUMAR */}
         <div
@@ -57,14 +57,14 @@ export default function HeroReference({ isLoaded = true }) {
           }}
         >
           {/* Left: PRAVIN */}
-          <div className="flex-1 text-right pr-1 sm:pr-4 overflow-visible">
+          <div className="flex-1 text-right pr-2 sm:pr-4 overflow-visible">
             <div
               className={`transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                 animateIn ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20 sm:-translate-x-44'
               }`}
             >
               <span
-                className="text-[clamp(1.15rem,4.2vw,4.8rem)] font-black uppercase tracking-tight leading-none font-['Syne'] text-[#C8705D] select-none whitespace-nowrap inline-block"
+                className="text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-black uppercase tracking-tight leading-none font-['Syne'] text-[#C8705D] select-none whitespace-nowrap inline-block"
                 style={{
                   textShadow: `
                     1px 1px 0px #A85444,
@@ -84,17 +84,17 @@ export default function HeroReference({ isLoaded = true }) {
           </div>
 
           {/* Center Gap specifically calculated for head & raised arm */}
-          <div className="w-[80px] sm:w-[110px] md:w-[170px] lg:w-[200px] shrink-0 pointer-events-none" />
+          <div className="w-[100px] sm:w-[130px] md:w-[170px] lg:w-[200px] shrink-0 pointer-events-none" />
 
           {/* Right: KUMAR */}
-          <div className="flex-1 text-left pl-1 sm:pl-4 overflow-visible">
+          <div className="flex-1 text-left pl-2 sm:pl-4 overflow-visible">
             <div
               className={`transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                 animateIn ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20 sm:translate-x-44'
               }`}
             >
               <span
-                className="text-[clamp(1.15rem,4.2vw,4.8rem)] font-black uppercase tracking-tight leading-none font-['Syne'] text-[#18181B] select-none whitespace-nowrap inline-block"
+                className="text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-black uppercase tracking-tight leading-none font-['Syne'] text-[#18181B] select-none whitespace-nowrap inline-block"
                 style={{
                   textShadow: `
                     1px 1px 0px #32323A,
@@ -116,7 +116,7 @@ export default function HeroReference({ isLoaded = true }) {
 
         {/* Center Cutout Portrait (Pravin in Floral Shirt) */}
         <div
-          className="relative md:absolute md:bottom-0 md:left-1/2 md:-translate-x-1/2 z-20 pointer-events-none flex justify-center items-end h-full max-h-[30vh] sm:max-h-[38vh] md:max-h-[740px] md:h-[74vh] transition-transform duration-200 ease-out"
+          className="relative md:absolute md:bottom-0 md:left-1/2 md:-translate-x-1/2 z-20 pointer-events-none flex justify-center items-end h-[280px] sm:h-[340px] md:max-h-[740px] md:h-[74vh] transition-transform duration-200 ease-out"
           style={{
             transform: isMobile
               ? 'translateZ(20px)'
